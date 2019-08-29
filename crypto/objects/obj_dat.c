@@ -705,6 +705,8 @@ int OBJ_create(const char *oid, const char *sn, const char *ln)
     /* If NID is not NID_undef then object already exists */
     if (OBJ_obj2nid(tmpoid) != NID_undef) {
         OBJerr(OBJ_F_OBJ_CREATE, OBJ_R_OID_EXISTS);
+	/* print OID and shortname of already existing object */
+	fprintf(stderr, "OID_EXISTS : %s %s \n",oid,sn);
         goto err;
     }
 
