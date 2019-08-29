@@ -679,8 +679,7 @@ int OBJ_create_objects(BIO *in)
         }
         if (*o == '\0')
             return num;
-        if (!OBJ_create(o, s, l))
-            return num;
+        OBJ_create(o, s, l);
         num++;
     }
 }
